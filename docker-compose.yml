@@ -12,6 +12,7 @@ services:
     ports:
       - '80:80'
       - '443:443'
+    command: certbot --nginx -d tst.dev.debuide.com --register-unsafely-without-email --test-cert  
     volumes:
       - ./frontend/build:/var/www/html
       - ./deploy/default.conf:/etc/nginx/sites-available/default
